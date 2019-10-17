@@ -1,0 +1,199 @@
+__S0 2100 0
+__S1 190 0
+_LED 9 0 CONST
+__H__Z88888RS_ 190 0
+__L__Z88888RS_ 190 0
+_main 7E5 0 CODE
+_exit 4 0 CODE
+start 4 0 CODE
+__Hintsave_0 190 0
+__Lintsave_0 190 0
+__Hintcode 4 0 CODE
+__Lintcode 4 0 CODE
+__Hintsave_1 190 0
+__Lintsave_1 190 0
+_delaytime 73E 0 CODE
+__Hintsave_2 190 0
+__Lintsave_2 190 0
+__Hintsave 190 0
+__Lintsave 190 0
+__Hintsave_3 190 0
+__Lintsave_3 190 0
+__Hcode 190 0
+__Lcode 190 0
+__Hstrings 8 0 STRING
+__Lstrings 8 0 STRING
+?a_main 20 0 BANK0
+__Htemp 71 0 BANK0
+__Ltemp 70 0 BANK0
+__Hinit 4 0 CODE
+__Linit 4 0 CODE
+powerup 0 0 CODE
+__Htext 190 0
+__Ltext 190 0
+?_delaytime 23 0 BANK0
+__Hpowerup 4 0 CODE
+__Lpowerup 0 0 CODE
+__Hvectors 13 0 CODE
+__Lvectors 13 0 CODE
+__Hclrtext 8 0 CODE
+__Lclrtext 8 0 CODE
+_shownumber 76A 0 CODE
+__Hidloc 2000 0 IDLOC
+__Lidloc 2000 0 IDLOC
+__Hpstrings 8 0 CODE
+__Lpstrings 8 0 CODE
+__Hend_init 8 0 CODE
+__Lend_init 4 0 CODE
+__Hnvram 29 0 BANK0
+__Lnvram 29 0 BANK0
+__Hfloat_text0 8 0 CODE
+__Lfloat_text0 8 0 CODE
+?a_delaytime 25 0 BANK0
+_GetKeyValue 7AB 0 CODE
+__Hinit23 4 0 CODE
+__Linit23 4 0 CODE
+__Hfloat_text1 8 0 CODE
+__Lfloat_text1 8 0 CODE
+__Brbit_0 20 FFFFFF20 BANK0
+__Hrbit_0 100 FFFFFF20 BANK0
+__Lrbit_0 100 FFFFFF20 BANK0
+__Brbit_1 A0 FFFFFBA0 BANK1
+__Hrbss_0 29 0 BANK0
+__Hrbit_1 500 FFFFFBA0 BANK1
+__Lrbss_0 20 0 BANK0
+__Lrbit_1 500 FFFFFBA0 BANK1
+__Brbit_2 110 FFFFF890 BANK2
+__Hrbss_1 A0 0 BANK1
+__Hrbit_2 880 FFFFF890 BANK2
+__Lrbss_1 A0 0 BANK1
+__Lrbit_2 880 FFFFF890 BANK2
+__Brbit_3 190 FFFFF510 BANK3
+__Hrbss_2 110 0 BANK2
+__Hrbit_3 C80 FFFFF510 BANK3
+__Lrbss_2 110 0 BANK2
+__Lrbit_3 C80 FFFFF510 BANK3
+__Hrbss_3 190 0 BANK3
+__Lrbss_3 190 0 BANK3
+__Hintentry 4 0 CODE
+__Lintentry 4 0 CODE
+intlevel0 4 0 CODE
+intlevel1 4 0 CODE
+?_shownumber 21 0 BANK0
+__Hfloat_text2 8 0 CODE
+__Lfloat_text2 8 0 CODE
+__Hconfig 2007 0 CONFIG
+__Lconfig 2007 0 CONFIG
+__Hfloat_text3 8 0 CODE
+__Lfloat_text3 8 0 CODE
+__Hintret 4 0 CODE
+__Lintret 4 0 CODE
+__Hstruct 29 0 BANK0
+__Lstruct 29 0 BANK0
+used_btemp0 1 0
+__Hfloat_text4 8 0 CODE
+__Lfloat_text4 8 0 CODE
+__Hcommon_ram 190 0
+__Lcommon_ram 190 0
+__Hidata_0 8 0 CODE
+__Lidata_0 8 0 CODE
+__Hrdata_0 29 0 BANK0
+__Lrdata_0 29 0 BANK0
+__Hidata_1 8 0 CODE
+__Lidata_1 8 0 CODE
+__Heeprom_data 2100 0 EEDATA
+__Leeprom_data 2100 0 EEDATA
+__Hrdata_1 A0 0 BANK1
+__Lrdata_1 A0 0 BANK1
+__Hidata_2 8 0 CODE
+__Lidata_2 8 0 CODE
+__Hrdata_2 110 0 BANK2
+__Lrdata_2 110 0 BANK2
+__Hidata_3 8 0 CODE
+__Lidata_3 8 0 CODE
+__Hrdata_3 190 0 BANK3
+__Lrdata_3 190 0 BANK3
+__Hnvram_1 A0 0 BANK1
+__Lnvram_1 A0 0 BANK1
+__Bnvbit_0 29 FFFFFEE1 BANK0
+__Hnvbit_0 148 FFFFFEE1 BANK0
+__Lnvbit_0 148 FFFFFEE1 BANK0
+__Hnvram_2 110 0 BANK2
+__Lnvram_2 110 0 BANK2
+__Bnvbit_1 A0 FFFFFBA0 BANK1
+__Hnvbit_1 500 FFFFFBA0 BANK1
+__Lnvbit_1 500 FFFFFBA0 BANK1
+__Hnvram_3 190 0 BANK3
+__Lnvram_3 190 0 BANK3
+__Bnvbit_2 110 FFFFF890 BANK2
+__Hnvbit_2 880 FFFFF890 BANK2
+__Lnvbit_2 880 FFFFF890 BANK2
+__Bnvbit_3 190 FFFFF510 BANK3
+__Hnvbit_3 C80 FFFFF510 BANK3
+__Lnvbit_3 C80 FFFFF510 BANK3
+__Hstringtable 8 0 ENTRY
+__Lstringtable 8 0 ENTRY
+%segments
+powerup 0 7 CODE
+intentry 8 F CODE
+rbit_0 100 108 BANK0
+temp 70 70 COMBANK
+text2 E7C FFF CODE
+const1 10 25 CONST
+%locals
+E:\#Programming\Electronics\MPLAB\PIC_Lab_20190928\program_pic\expt2\ex2.obj
+pc 2
+btemp 70 0 BANK0
+pclath A
+status 3
+E:\#Programming\Electronics\MPLAB\PIC_Lab_20190928\program_pic\expt2\ex2.c
+75 73E 0 CODE
+77 73E 0 CODE
+79 74C 0 CODE
+77 75B 0 CODE
+85 76A 0 CODE
+87 775 0 CODE
+88 776 0 CODE
+89 77D 0 CODE
+90 77E 0 CODE
+92 792 0 CODE
+93 793 0 CODE
+94 798 0 CODE
+95 79E 0 CODE
+96 79F 0 CODE
+97 7A5 0 CODE
+39 7AB 0 CODE
+40 7AD 0 CODE
+42 7B2 0 CODE
+43 7B4 0 CODE
+44 7B6 0 CODE
+45 7B8 0 CODE
+47 7BA 0 CODE
+48 7BB 0 CODE
+50 7C0 0 CODE
+51 7C2 0 CODE
+52 7C4 0 CODE
+53 7C6 0 CODE
+55 7C8 0 CODE
+56 7C9 0 CODE
+58 7CE 0 CODE
+59 7D0 0 CODE
+60 7D2 0 CODE
+61 7D4 0 CODE
+63 7D6 0 CODE
+64 7D7 0 CODE
+66 7DC 0 CODE
+67 7DE 0 CODE
+68 7E0 0 CODE
+69 7E2 0 CODE
+71 7E4 0 CODE
+20 7E5 0 CODE
+21 7E5 0 CODE
+22 7E8 0 CODE
+23 7EA 0 CODE
+24 7EB 0 CODE
+25 7ED 0 CODE
+29 7EF 0 CODE
+30 7F1 0 CODE
+31 7FA 0 CODE
+32 7FB 0 CODE

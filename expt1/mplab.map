@@ -1,0 +1,32 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Sat Sep 28 00:17:18 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000016
+                   .cinit    romdata   0x00000b    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00000c      
+            13 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                       LP   0x00000a    program     static C:\program_mplab\ex1.asm 
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                       LP   0x00000a    program     static C:\program_mplab\ex1.asm 
+
+
