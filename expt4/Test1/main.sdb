@@ -551,45 +551,16 @@
 [v _WR `VZb  1 s 0 @3169 ]
 "373
 [v _RD `VZb  1 s 0 @3168 ]
-"7 E:\#Programming\Electronics\MPLAB\PIC_Experiment_3B\expt3\ex3.c
-[v _LED `Cuc  10a e 10 0 ]
-"17
+"9 E:\#Programming\Electronics\MPLAB\PIC_Experiment_3B\expt4\Test1\main.c
 [v _main `(v  1 e 0 0 ]
 {
-"31
-{
-[v _i `uc  1 a 1 0 ]
-}
-"38
-} 1
-"40
-[v F518 `(v  1 t 0 ]
-[v _PIC_Int `IF518  1 e 0 0 ]
-{
-[v _i `uc  1 a 1 0 ]
-[v _n `i  1 a 2 1 ]
-"70
-} 3
-"72
-[v _Delay `(v  1 e 0 0 ]
-{
-[v _delay `ui  1 p 2 0 ]
-[v _delay `ui  1 p 2 0 ]
-[v _i `ui  1 a 2 0 ]
-"76
-} 2
-"78
-[v _Delay1 `(v  1 e 0 0 ]
-{
-[v _delay `ui  1 p 2 0 ]
-[v _delay `ui  1 p 2 0 ]
-[v _i `ui  1 a 2 0 ]
-"82
-} 2
-"84
-[v _shownumber `(v  1 e 0 0 ]
-{
-[v _n `i  1 p 2 0 ]
-[v _n `i  1 p 2 0 ]
-"90
+"21
 } 0
+"23
+[v _delay_10ms `(v  1 e 0 0 ]
+{
+[v _n `ui  1 p 2 0 ]
+[v _n `ui  1 p 2 0 ]
+[v _i `ui  1 a 2 0 ]
+"34
+} 2

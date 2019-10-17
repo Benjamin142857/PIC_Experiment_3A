@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PICC Macro Assembler V8.05PL2
-Serial number: HCPIC-88888                            Sat Sep 28 15:56:33 2019
+Serial number: HCPIC-88888                            Thu Oct 17 22:02:54 2019
 
 Licensed to: ONE TWO
      1                           	processor	16F877A
@@ -35,323 +35,323 @@ Licensed to: ONE TWO
     26  0000                     
     27                           
     28                           	psect	__Z88888RS_
-    29  0190                     
-    30  0190                     
+    29  0000'                    
+    30  0000'                    
     31                           
     32                           	psect	const1
-    33  0060  0782               	addwf	2
-    34  0061                     _LED
-    35  0061  343F               	retlw	63
-    36  0062  3406               	retlw	6
-    37  0063  345B               	retlw	91
-    38  0064  344F               	retlw	79
-    39  0065  3466               	retlw	102
-    40  0066  346D               	retlw	109
-    41  0067  3400               	retlw	0
-    42  0068  3400               	retlw	0
-    43  0069  3400               	retlw	0
-    44  006A  3400               	retlw	0
+    33  0000' 0782               	addwf	2
+    34  0001'                    _LED
+    35  0001' 343F               	retlw	63
+    36  0002' 3406               	retlw	6
+    37  0003' 345B               	retlw	91
+    38  0004' 344F               	retlw	79
+    39  0005' 3466               	retlw	102
+    40  0006' 346D               	retlw	109
+    41  0007' 3400               	retlw	0
+    42  0008' 3400               	retlw	0
+    43  0009' 3400               	retlw	0
+    44  000A' 3400               	retlw	0
     45                           
     46                           	psect	intcode
     47                           ;ex3.c: 39: void interrupt PIC_Int(void)
     48                           ;ex3.c: 40: {
-    49  0011                     _PIC_Int
-    50  0011                     int_func
+    49  0000'                    _PIC_Int
+    50  0000'                    int_func
     51                           ;	_i assigned to ?a_PIC_Int+0
     52  0000                     _PIC_Int$i	set	?a_PIC_Int
     53                           ;	_n assigned to ?a_PIC_Int+1
     54  0000                     _PIC_Int$n	set	?a_PIC_Int+1
     55                           ;ex3.c: 41: unsigned char i;
-    56  0011  1C0B               	btfss	11,0
-    57  0012  2833               	goto	l9
+    56  0000' 1C0B               	btfss	11,0
+    57  0001' 2800'              	goto	l9
     58                           ;ex3.c: 44: {
-    59  0013  1283               	bcf	3,5
-    60  0014  1303               	bcf	3,6	;carry unused
-    61  0015  1685               	bsf	5,5
+    59  0002' 1283               	bcf	3,5
+    60  0003' 1303               	bcf	3,6	;carry unused
+    61  0004' 1685               	bsf	5,5
     62                           ;ex3.c: 46: RA1=0;
-    63  0016  1085               	bcf	5,1
+    63  0005' 1085               	bcf	5,1
     64                           ;ex3.c: 47: for(n=5;n>=0;n--)
-    65  0017  3005               	movlw	5
-    66  0018  00A6               	movwf	?a_PIC_Int+1
-    67  0019  01A7               	clrf	?a_PIC_Int+2
-    68  001A                     l10
+    65  0006' 3005               	movlw	5
+    66  0007' 0081'              	movwf	?a_PIC_Int+1
+    67  0008' 0182'              	clrf	?a_PIC_Int+2
+    68  0009'                    l10
     69                           ;ex3.c: 48: {
     70                           ;ex3.c: 49: shownumber(n);
-    71  001A  0826               	movf	?a_PIC_Int+1,w
-    72  001B  00A8               	movwf	?_shownumber
-    73  001C  0827               	movf	?a_PIC_Int+2,w
-    74  001D  00A9               	movwf	?_shownumber+1
-    75  001E  120A  118A  278A   	fcall	_shownumber
+    71  0009' 0801'              	movf	?a_PIC_Int+1,w
+    72  000A' 0080'              	movwf	?_shownumber
+    73  000B' 0802'              	movf	?a_PIC_Int+2,w
+    74  000C' 0081'              	movwf	?_shownumber+1
+    75  000D' 120A' 118A' 2000'  	fcall	_shownumber
     76                           ;ex3.c: 50: Delay1(300);
-    77  0021  302C               	movlw	44
-    78  0022  00A8               	movwf	?_Delay1
-    79  0023  3001               	movlw	1
-    80  0024  00A9               	movwf	?_Delay1+1
-    81  0025  120A  118A  279E   	fcall	_Delay1
-      +       120A  118A         
+    77  0010' 302C               	movlw	44
+    78  0011' 0080'              	movwf	?_Delay1
+    79  0012' 3001               	movlw	1
+    80  0013' 0081'              	movwf	?_Delay1+1
+    81  0014' 120A' 118A' 2000'  	fcall	_Delay1
+      +       120A' 118A'        
     82                           ;ex3.c: 51: }
-    83  002A  08A6               	movf	?a_PIC_Int+1
-    84  002B  1903               	btfsc	3,2
-    85  002C  03A7               	decf	?a_PIC_Int+2
-    86  002D  03A6               	decf	?a_PIC_Int+1
-    87  002E  1FA7               	btfss	?a_PIC_Int+2,7
-    88  002F  281A               	goto	l10
+    83  0019' 0881'              	movf	?a_PIC_Int+1
+    84  001A' 1903               	btfsc	3,2
+    85  001B' 0382'              	decf	?a_PIC_Int+2
+    86  001C' 0381'              	decf	?a_PIC_Int+1
+    87  001D' 1F82'              	btfss	?a_PIC_Int+2,7
+    88  001E' 2800'              	goto	l10
     89                           ;ex3.c: 52: RA1=1;
-    90  0030  1485               	bsf	5,1
+    90  001F' 1485               	bsf	5,1
     91                           ;ex3.c: 53: RA5=0;
-    92  0031  1285               	bcf	5,5
+    92  0020' 1285               	bcf	5,5
     93                           ;ex3.c: 54: RBIF=0;
-    94  0032  100B               	bcf	11,0
-    95  0033                     l9
+    94  0021' 100B               	bcf	11,0
+    95  0022'                    l9
     96                           ;ex3.c: 55: }
-    97  0033  1C8B               	btfss	11,1
-    98  0034  284D               	goto	l8
+    97  0022' 1C8B               	btfss	11,1
+    98  0023' 2800'              	goto	l8
     99                           ;ex3.c: 57: {
-   100  0035  1283               	bcf	3,5
-   101  0036  1303               	bcf	3,6	;carry unused
-   102  0037  1285               	bcf	5,5
+   100  0024' 1283               	bcf	3,5
+   101  0025' 1303               	bcf	3,6	;carry unused
+   102  0026' 1285               	bcf	5,5
    103                           ;ex3.c: 59: RA1=1;
-   104  0038  1485               	bsf	5,1
+   104  0027' 1485               	bsf	5,1
    105                           ;ex3.c: 60: PORTD=0x00;
-   106  0039  0188               	clrf	8	;volatile
+   106  0028' 0188               	clrf	8	;volatile
    107                           ;ex3.c: 61: for(i=0; i<10; i++)
-   108  003A  01A5               	clrf	?a_PIC_Int
-   109  003B                     l14
+   108  0029' 0180'              	clrf	?a_PIC_Int
+   109  002A'                    l14
    110                           ;ex3.c: 62: {
    111                           ;ex3.c: 63: PORTD=~PORTD;
-   112  003B  0988               	comf	8	;volatile
+   112  002A' 0988               	comf	8	;volatile
    113                           ;ex3.c: 64: Delay1(300);
-   114  003C  302C               	movlw	44
-   115  003D  00A8               	movwf	?_Delay1
-   116  003E  3001               	movlw	1
-   117  003F  00A9               	movwf	?_Delay1+1
-   118  0040  120A  118A  279E   	fcall	_Delay1
-      +       120A  118A         
+   114  002B' 302C               	movlw	44
+   115  002C' 0080'              	movwf	?_Delay1
+   116  002D' 3001               	movlw	1
+   117  002E' 0081'              	movwf	?_Delay1+1
+   118  002F' 120A' 118A' 2000'  	fcall	_Delay1
+      +       120A' 118A'        
    119                           ;ex3.c: 65: }
-   120  0045  0AA5               	incf	?a_PIC_Int
-   121  0046  300A               	movlw	10
-   122  0047  0225               	subwf	?a_PIC_Int,w
-   123  0048  1C03               	btfss	3,0
-   124  0049  283B               	goto	l14
+   120  0034' 0A80'              	incf	?a_PIC_Int
+   121  0035' 300A               	movlw	10
+   122  0036' 0200'              	subwf	?a_PIC_Int,w
+   123  0037' 1C03               	btfss	3,0
+   124  0038' 2800'              	goto	l14
    125                           ;ex3.c: 66: RA1=1;
-   126  004A  1485               	bsf	5,1
+   126  0039' 1485               	bsf	5,1
    127                           ;ex3.c: 67: RA5=0;
-   128  004B  1285               	bcf	5,5
+   128  003A' 1285               	bcf	5,5
    129                           ;ex3.c: 68: INTF=0;
-   130  004C  108B               	bcf	11,1
+   130  003B' 108B               	bcf	11,1
    131                           ;ex3.c: 69: }
-   132  004D                     l8
-   133  004D  1303               	bcf	3,6	;carry unused
-   134  004E  1283               	bcf	3,5
+   132  003C'                    l8
+   133  003C' 1303               	bcf	3,6	;carry unused
+   134  003D' 1283               	bcf	3,5
    135                           
    136                           	psect	intsave_0
-   137  0072                     saved_w
-   138  0072                     	ds	1
+   137  0000'                    saved_w
+   138  0000'                    	ds	1
    139                           
    140                           	psect	intret
-   141  0053  082D               	movf	saved_fsr,w
-   142  0054  0084               	movwf	4	;restore FSR
-   143  0055  082E               	movf	saved_pclath,w
-   144  0056  008A               	movwf	10
-   145  0057                     int_restore
-   146  0057  082C               	movf	saved_status,w
-   147  0058  0083               	movwf	3
-   148  0059  0EF2               	swapf	saved_w
-   149  005A  0E72               	swapf	saved_w,w
-   150  005B  0009               	retfie
+   141  0000' 0800'              	movf	saved_fsr,w
+   142  0001' 0084               	movwf	4	;restore FSR
+   143  0002' 0800'              	movf	saved_pclath,w
+   144  0003' 008A               	movwf	10
+   145  0004'                    int_restore
+   146  0004' 0800'              	movf	saved_status,w
+   147  0005' 0083               	movwf	3
+   148  0006' 0E80'              	swapf	saved_w
+   149  0007' 0E00'              	swapf	saved_w,w
+   150  0008' 0009               	retfie
    151                           
    152                           	psect	intentry
-   153  0004                     int_entry
-   154  0004  00F2               	movwf	saved_w
-   155  0005  0803               	movf	3,w
-   156  0006  0183               	clrf	3
-   157  0007  00AC               	movwf	saved_status
-   158  0008  0804               	movf	4,w
-   159  0009  00AD               	movwf	saved_fsr
-   160  000A  080A               	movf	10,w
-   161  000B  00AE               	movwf	saved_pclath
-   162  000C  018A               	clrf	10
+   153  0000'                    int_entry
+   154  0000' 0080'              	movwf	saved_w
+   155  0001' 0803               	movf	3,w
+   156  0002' 0183               	clrf	3
+   157  0003' 0080'              	movwf	saved_status
+   158  0004' 0804               	movf	4,w
+   159  0005' 0080'              	movwf	saved_fsr
+   160  0006' 080A               	movf	10,w
+   161  0007' 0080'              	movwf	saved_pclath
+   162  0008' 018A               	clrf	10
    163                           ;ex3.c: 71: void Delay (unsigned int delay)
    164                           ;ex3.c: 72: {
    165                           ;       param _delay assigned to ?_Delay+0
    166  0000                     _Delay$delay	set	?_Delay
    167                           
    168                           	psect	intsave
-   169  002C                     saved_status
-   170  002C                     	ds	1
-   171  002D                     saved_fsr
-   172  002D                     	ds	1
-   173  002E                     saved_pclath
-   174  002E                     	ds	1
+   169  0000'                    saved_status
+   170  0000'                    	ds	1
+   171  0001'                    saved_fsr
+   172  0001'                    	ds	1
+   173  0002'                    saved_pclath
+   174  0002'                    	ds	1
    175                           
    176                           	psect	text2
-   177  07B8                     _Delay
+   177  0000'                    _Delay
    178                           ;	_i assigned to ?a_Delay+0
    179  0000                     _Delay$i	set	?a_Delay
    180                           ;ex3.c: 73: unsigned int i;
-   181  07B8  0183               	clrf	3	;select bank 0
-   182  07B9  0822               	movf	?_Delay+1,w
-   183  07BA  0421               	iorwf	?_Delay,w
-   184  07BB  1903               	btfsc	3,2
-   185  07BC  0008               	return
-   186  07BD                     l18
+   181  0000' 0183               	clrf	3	;select bank 0
+   182  0001' 0801'              	movf	?_Delay+1,w
+   183  0002' 0400'              	iorwf	?_Delay,w
+   184  0003' 1903               	btfsc	3,2
+   185  0004' 0008               	return
+   186  0005'                    l18
    187                           ;ex3.c: 75: for (i=0; i<45; i++);
-   188  07BD  01A3               	clrf	?a_Delay
-   189  07BE  01A4               	clrf	?a_Delay+1
-   190  07BF                     l21
-   191  07BF  0AA3               	incf	?a_Delay
-   192  07C0  1903               	btfsc	3,2
-   193  07C1  0AA4               	incf	?a_Delay+1
-   194  07C2  3000               	movlw	0
-   195  07C3  0224               	subwf	?a_Delay+1,w
-   196  07C4  302D               	movlw	45
-   197  07C5  1903               	btfsc	3,2
-   198  07C6  0223               	subwf	?a_Delay,w
-   199  07C7  1C03               	btfss	3,0
-   200  07C8  2FBF               	goto	l21
-   201  07C9  08A1               	movf	?_Delay
-   202  07CA  1903               	btfsc	3,2
-   203  07CB  03A2               	decf	?_Delay+1
-   204  07CC  03A1               	decf	?_Delay
-   205  07CD  0822               	movf	?_Delay+1,w
-   206  07CE  0421               	iorwf	?_Delay,w
-   207  07CF  1903               	btfsc	3,2
-   208  07D0  0008               	return
-   209  07D1  2FBD               	goto	l18
-   210  07D2                     _main
+   188  0005' 0180'              	clrf	?a_Delay
+   189  0006' 0181'              	clrf	?a_Delay+1
+   190  0007'                    l21
+   191  0007' 0A80'              	incf	?a_Delay
+   192  0008' 1903               	btfsc	3,2
+   193  0009' 0A81'              	incf	?a_Delay+1
+   194  000A' 3000               	movlw	0
+   195  000B' 0201'              	subwf	?a_Delay+1,w
+   196  000C' 302D               	movlw	45
+   197  000D' 1903               	btfsc	3,2
+   198  000E' 0200'              	subwf	?a_Delay,w
+   199  000F' 1C03               	btfss	3,0
+   200  0010' 2800'              	goto	l21
+   201  0011' 0880'              	movf	?_Delay
+   202  0012' 1903               	btfsc	3,2
+   203  0013' 0381'              	decf	?_Delay+1
+   204  0014' 0380'              	decf	?_Delay
+   205  0015' 0801'              	movf	?_Delay+1,w
+   206  0016' 0400'              	iorwf	?_Delay,w
+   207  0017' 1903               	btfsc	3,2
+   208  0018' 0008               	return
+   209  0019' 2800'              	goto	l18
+   210  001A'                    _main
    211                           ;	_i assigned to ?a_main+0
    212  0000                     _main$i	set	?a_main
    213                           ;ex3.c: 18: ADCON1=(ADCON1&0xf0)|0x07;
-   214  07D2  1683               	bsf	3,5
-   215  07D3  1303               	bcf	3,6	;carry unused
-   216  07D4  081F               	movf	31,w	;volatile
-   217  07D5  39F0               	andlw	-16
-   218  07D6  3807               	iorlw	7
-   219  07D7  009F               	movwf	31	;volatile
+   214  001A' 1683               	bsf	3,5
+   215  001B' 1303               	bcf	3,6	;carry unused
+   216  001C' 081F               	movf	31,w	;volatile
+   217  001D' 39F0               	andlw	-16
+   218  001E' 3807               	iorlw	7
+   219  001F' 009F               	movwf	31	;volatile
    220                           ;ex3.c: 19: TRISB=0B00100001;
-   221  07D8  3021               	movlw	33
-   222  07D9  0086               	movwf	6	;volatile
+   221  0020' 3021               	movlw	33
+   222  0021' 0086               	movwf	6	;volatile
    223                           ;ex3.c: 20: TRISD=0x00;
-   224  07DA  0188               	clrf	8	;volatile
+   224  0022' 0188               	clrf	8	;volatile
    225                           ;ex3.c: 21: PORTA=0x00;
-   226  07DB  1283               	bcf	3,5
-   227  07DC  0185               	clrf	5	;volatile
+   226  0023' 1283               	bcf	3,5
+   227  0024' 0185               	clrf	5	;volatile
    228                           ;ex3.c: 22: TRISA=TRISA&(~(0x01<<1));
-   229  07DD  1683               	bsf	3,5
-   230  07DE  1085               	bcf	5,1	;volatile
+   229  0025' 1683               	bsf	3,5
+   230  0026' 1085               	bcf	5,1	;volatile
    231                           ;ex3.c: 23: TRISA=TRISA&(~(0x01<<5));
-   232  07DF  1285               	bcf	5,5	;volatile
+   232  0027' 1285               	bcf	5,5	;volatile
    233                           ;ex3.c: 24: INTEDG=0;
-   234  07E0  1301               	bcf	1,6
+   234  0028' 1301               	bcf	1,6
    235                           ;ex3.c: 25: RBIE=1;
-   236  07E1  158B               	bsf	11,3
+   236  0029' 158B               	bsf	11,3
    237                           ;ex3.c: 26: INTE=1;
-   238  07E2  160B               	bsf	11,4
+   238  002A' 160B               	bsf	11,4
    239                           ;ex3.c: 27: INTF=0;
-   240  07E3  108B               	bcf	11,1
+   240  002B' 108B               	bcf	11,1
    241                           ;ex3.c: 28: GIE=1;
-   242  07E4  178B               	bsf	11,7
+   242  002C' 178B               	bsf	11,7
    243                           ;ex3.c: 29: RA1=1;
-   244  07E5  1283               	bcf	3,5
-   245  07E6  1485               	bsf	5,1
-   246  07E7                     l3
+   244  002D' 1283               	bcf	3,5
+   245  002E' 1485               	bsf	5,1
+   246  002F'                    l3
    247                           ;ex3.c: 30: while(1){
    248                           ;ex3.c: 31: unsigned char i=0;
-   249  07E7  01A0               	clrf	?a_main
+   249  002F' 0180'              	clrf	?a_main
    250                           ;ex3.c: 32: for(i=0; i<8; i++)
-   251  07E8  01A0               	clrf	?a_main
-   252  07E9                     l5
+   251  0030' 0180'              	clrf	?a_main
+   252  0031'                    l5
    253                           ;ex3.c: 33: {
    254                           ;ex3.c: 34: PORTD=(0x01<<i);
-   255  07E9  3001               	movlw	1
-   256  07EA  00F0               	movwf	btemp
-   257  07EB  0820               	movf	?a_main,w
-   258  07EC  00F1               	movwf	btemp+1
-   259  07ED  0AF1               	incf	btemp+1
-   260  07EE  2FF1               	goto	u14
-   261  07EF                     u15
-   262  07EF  1003               	bcf	3,0
-   263  07F0  0DF0               	rlf	btemp
-   264  07F1                     u14
-   265  07F1  0BF1               	decfsz	btemp+1
-   266  07F2  2FEF               	goto	u15
-   267  07F3  0870               	movf	btemp,w
-   268  07F4  0088               	movwf	8	;volatile
+   255  0031' 3001               	movlw	1
+   256  0032' 0080'              	movwf	btemp
+   257  0033' 0800'              	movf	?a_main,w
+   258  0034' 0081'              	movwf	btemp+1
+   259  0035' 0A81'              	incf	btemp+1
+   260  0036' 2800'              	goto	u14
+   261  0037'                    u15
+   262  0037' 1003               	bcf	3,0
+   263  0038' 0D80'              	rlf	btemp
+   264  0039'                    u14
+   265  0039' 0B81'              	decfsz	btemp+1
+   266  003A' 2800'              	goto	u15
+   267  003B' 0800'              	movf	btemp,w
+   268  003C' 0088               	movwf	8	;volatile
    269                           ;ex3.c: 35: Delay(3000);
-   270  07F5  30B8               	movlw	184
-   271  07F6  00A1               	movwf	?_Delay
-   272  07F7  300B               	movlw	11
-   273  07F8  00A2               	movwf	?_Delay+1
-   274  07F9  27B8               	fcall	_Delay
+   270  003D' 30B8               	movlw	184
+   271  003E' 0080'              	movwf	?_Delay
+   272  003F' 300B               	movlw	11
+   273  0040' 0081'              	movwf	?_Delay+1
+   274  0041' 2000'              	fcall	_Delay
    275                           ;ex3.c: 36: }
-   276  07FA  0AA0               	incf	?a_main
-   277  07FB  3008               	movlw	8
-   278  07FC  0220               	subwf	?a_main,w
-   279  07FD  1803               	btfsc	3,0
-   280  07FE  2FE7               	goto	l3
-   281  07FF  2FE9               	goto	l5
+   276  0042' 0A80'              	incf	?a_main
+   277  0043' 3008               	movlw	8
+   278  0044' 0200'              	subwf	?a_main,w
+   279  0045' 1803               	btfsc	3,0
+   280  0046' 2800'              	goto	l3
+   281  0047' 2800'              	goto	l5
    282                           
    283                           	psect	text3
-   284  079E                     _Delay1
+   284  0000'                    _Delay1
    285                           ;	_i assigned to ?a_Delay1+0
    286  0000                     _Delay1$i	set	?a_Delay1
    287                           ;ex3.c: 79: unsigned int i;
-   288  079E  0183               	clrf	3	;select bank 0
-   289  079F  0829               	movf	?_Delay1+1,w
-   290  07A0  0428               	iorwf	?_Delay1,w
-   291  07A1  1903               	btfsc	3,2
-   292  07A2  0008               	return
-   293  07A3                     l25
+   288  0000' 0183               	clrf	3	;select bank 0
+   289  0001' 0801'              	movf	?_Delay1+1,w
+   290  0002' 0400'              	iorwf	?_Delay1,w
+   291  0003' 1903               	btfsc	3,2
+   292  0004' 0008               	return
+   293  0005'                    l25
    294                           ;ex3.c: 81: for (i=0; i<45; i++);
-   295  07A3  01AA               	clrf	?a_Delay1
-   296  07A4  01AB               	clrf	?a_Delay1+1
-   297  07A5                     l28
-   298  07A5  0AAA               	incf	?a_Delay1
-   299  07A6  1903               	btfsc	3,2
-   300  07A7  0AAB               	incf	?a_Delay1+1
-   301  07A8  3000               	movlw	0
-   302  07A9  022B               	subwf	?a_Delay1+1,w
-   303  07AA  302D               	movlw	45
-   304  07AB  1903               	btfsc	3,2
-   305  07AC  022A               	subwf	?a_Delay1,w
-   306  07AD  1C03               	btfss	3,0
-   307  07AE  2FA5               	goto	l28
-   308  07AF  08A8               	movf	?_Delay1
-   309  07B0  1903               	btfsc	3,2
-   310  07B1  03A9               	decf	?_Delay1+1
-   311  07B2  03A8               	decf	?_Delay1
-   312  07B3  0829               	movf	?_Delay1+1,w
-   313  07B4  0428               	iorwf	?_Delay1,w
-   314  07B5  1903               	btfsc	3,2
-   315  07B6  0008               	return
-   316  07B7  2FA3               	goto	l25
+   295  0005' 0180'              	clrf	?a_Delay1
+   296  0006' 0181'              	clrf	?a_Delay1+1
+   297  0007'                    l28
+   298  0007' 0A80'              	incf	?a_Delay1
+   299  0008' 1903               	btfsc	3,2
+   300  0009' 0A81'              	incf	?a_Delay1+1
+   301  000A' 3000               	movlw	0
+   302  000B' 0201'              	subwf	?a_Delay1+1,w
+   303  000C' 302D               	movlw	45
+   304  000D' 1903               	btfsc	3,2
+   305  000E' 0200'              	subwf	?a_Delay1,w
+   306  000F' 1C03               	btfss	3,0
+   307  0010' 2800'              	goto	l28
+   308  0011' 0880'              	movf	?_Delay1
+   309  0012' 1903               	btfsc	3,2
+   310  0013' 0381'              	decf	?_Delay1+1
+   311  0014' 0380'              	decf	?_Delay1
+   312  0015' 0801'              	movf	?_Delay1+1,w
+   313  0016' 0400'              	iorwf	?_Delay1,w
+   314  0017' 1903               	btfsc	3,2
+   315  0018' 0008               	return
+   316  0019' 2800'              	goto	l25
    317                           
    318                           	psect	text4
-   319  078A                     _shownumber
+   319  0000'                    _shownumber
    320                           ;ex3.c: 85: if(n<6)
-   321  078A  0183               	clrf	3	;select bank 0
-   322  078B  0829               	movf	?_shownumber+1,w
-   323  078C  3A80               	xorlw	128
-   324  078D  00F0               	movwf	btemp
-   325  078E  3080               	movlw	128
-   326  078F  0270               	subwf	btemp,w
-   327  0790  3006               	movlw	6
+   321  0000' 0183               	clrf	3	;select bank 0
+   322  0001' 0801'              	movf	?_shownumber+1,w
+   323  0002' 3A80               	xorlw	128
+   324  0003' 0080'              	movwf	btemp
+   325  0004' 3080               	movlw	128
+   326  0005' 0200'              	subwf	btemp,w
+   327  0006' 3006               	movlw	6
    328                           ;set	bank bits (((?_shownumber+0)))
-   329  0791  1903               	btfsc	3,2
-   330  0792  0228               	subwf	?_shownumber,w
-   331  0793  1803               	btfsc	3,0
-   332  0794  0008               	return
+   329  0007' 1903               	btfsc	3,2
+   330  0008' 0200'              	subwf	?_shownumber,w
+   331  0009' 1803               	btfsc	3,0
+   332  000A' 0008               	return
    333                           ;ex3.c: 86: {
-   334  0795  1685               	bsf	5,5
+   334  000B' 1685               	bsf	5,5
    335                           ;ex3.c: 88: PORTD=LED[n];
-   336  0796  3000               	movlw	_LED shr (0+8)
-   337  0797  008A               	movwf	10
-   338  0798  0828               	movf	?_shownumber,w
-   339  0799  2060               	call	((_LED+-1)& (0+2047))| (($)& (0+-2048))
-   340  079A  120A  118A         	pagesel	$
-   341  079C  0088               	movwf	8	;volatile
+   336  000C' 3000'              	movlw	_LED shr (0+8)
+   337  000D' 008A               	movwf	10
+   338  000E' 0800'              	movf	?_shownumber,w
+   339  000F' 2000'              	call	((_LED+-1)& (0+2047))| (($)& (0+-2048))
+   340  0010' 120A' 118A'        	pagesel	$
+   341  0012' 0088               	movwf	8	;volatile
    342                           ;ex3.c: 89: }
-   343  079D  0008               	return
+   343  0013' 0008               	return
    344                           
    345                           	psect	text5
    346  0000                     
@@ -632,29 +632,29 @@ Licensed to: ONE TWO
    621  0000                     
    622                           
    623                           	psect	temp
-   624  0070                     btemp
-   625  0070                     	ds	2
+   624  0000'                    btemp
+   625  0000'                    	ds	2
 
 
 HI-TECH Software PICC Macro Assembler V8.05PL2
-Symbol Table                                          Sat Sep 28 15:56:33 2019
+Symbol Table                                          Thu Oct 17 22:02:54 2019
 
-      ?a_main 0020             l3 07E7             l5 07E9  
-           l8 004D             l9 0033             pc 0002  
- ?_shownumber 0028            l10 001A            l21 07BF  
-          l14 003B            l25 07A3            l18 07BD  
-          l28 07A5            u14 07F1            u15 07EF  
-          fsr 0004           _LED 0061        _Delay1 079E  
-  _shownumber 078A       _PIC_Int 0011  save_code_ptr 0011  
-  save_btemp0 000D    save_btemp1 000F    save_btemp2 0011  
-  save_btemp3 0011    save_btemp4 0011    save_btemp5 0011  
-  save_btemp6 0011    save_btemp7 0011    save_btemp8 0011  
-  save_btemp9 0011          _main 07D2          btemp 0070  
-        start 005C        saved_w 0072      int_entry 0004  
-       _Delay 07B8      saved_fsr 002D   save_btemp10 000F  
- save_btemp11 000F   save_btemp12 000F   save_btemp13 000F  
- save_btemp14 000F   saved_pclath 002E         pclath 000A  
- saved_status 002C         status 0003       int_func 0011  
-   ?a_PIC_Int 0025       ?_Delay1 0028    int_restore 0057  
-      ?_Delay 0021    used_btemp0 0001    used_btemp1 0001  
-    ?a_Delay1 002A       ?a_Delay 0023  
+      ?a_main 0000*            l3 002F             l5 0031  
+           l8 003C             l9 0022             pc 0002  
+ ?_shownumber 0000*           l10 0009            l21 0007  
+          l14 002A            l25 0005            l18 0005  
+          l28 0007            u14 0039            u15 0037  
+          fsr 0004           _LED 0001        _Delay1 0000  
+  _shownumber 0000       _PIC_Int 0000  save_code_ptr 0000* 
+  save_btemp0 0000*   save_btemp1 0000*   save_btemp2 0000* 
+  save_btemp3 0000*   save_btemp4 0000*   save_btemp5 0000* 
+  save_btemp6 0000*   save_btemp7 0000*   save_btemp8 0000* 
+  save_btemp9 0000*         _main 001A          btemp 0000  
+        start 0000*       saved_w 0000      int_entry 0000  
+       _Delay 0000      saved_fsr 0001   save_btemp10 0000* 
+ save_btemp11 0000*  save_btemp12 0000*  save_btemp13 0000* 
+ save_btemp14 0000*  saved_pclath 0002         pclath 000A  
+ saved_status 0000         status 0003       int_func 0000  
+   ?a_PIC_Int 0000*      ?_Delay1 0000*   int_restore 0004  
+      ?_Delay 0000*   used_btemp0 0000*   used_btemp1 0000* 
+    ?a_Delay1 0000*      ?a_Delay 0000* 
