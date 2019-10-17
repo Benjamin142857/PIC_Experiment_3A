@@ -2,7 +2,7 @@
 // __CONFIG(XT&WDTDIS&LVPDIS);
 
 
-#define CONST_T 0x8B;
+#define CONST_T 0xD9;
 
 void delay_10ms (unsigned int n);
 
@@ -12,9 +12,13 @@ void main() {
 	while(1) {
 
 		RC1 = 0;			// ¹Ø·äÃùÆ÷
-		delay_10ms(90); 	// 900ms
+		delay_10ms(25); 	// 900ms
 		RC1 = 1;			// ¿ª·äÃùÆ÷
-		delay_10ms(10);		// 100ms
+		delay_10ms(25);		// 100ms
+		RC1 = 0;			// ¹Ø·äÃùÆ÷
+		delay_10ms(25); 	// 900ms
+		RC1 = 1;			// ¿ª·äÃùÆ÷
+		delay_10ms(25);		// 100ms
 
 	}
 

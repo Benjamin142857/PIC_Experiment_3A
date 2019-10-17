@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PICC Macro Assembler V8.05PL2
-Serial number: HCPIC-88888                            Thu Oct 17 23:48:05 2019
+Serial number: HCPIC-88888                            Fri Oct 18 00:41:38 2019
 
 Licensed to: ONE TWO
      1                           	processor	16F877A
@@ -52,274 +52,274 @@ Licensed to: ONE TWO
     43  0069  346F               	retlw	111
     44                           
     45                           	psect	intcode
-    46                           ;task2.c: 45: void interrupt PIC_Int(void) {
+    46                           ;task2.c: 43: void interrupt PIC_Int(void) {
     47  0011                     _PIC_Int
     48  0011                     int_func
     49                           ;	_i assigned to ?a_PIC_Int+0
     50  0000                     _PIC_Int$i	set	?a_PIC_Int
-    51                           ;task2.c: 46: unsigned int i;
+    51                           ;task2.c: 44: unsigned int i;
     52  0011  1C0B               	btfss	11,0
     53  0012  284C               	goto	L1
-    54                           ;task2.c: 51: PORTD=0x00;
+    54                           ;task2.c: 49: PORTD=0x00;
     55  0013  1283               	bcf	3,5
     56  0014  1303               	bcf	3,6	;carry unused
     57  0015  0188               	clrf	8	;volatile
-    58                           ;task2.c: 53: for(i=0; i<10; i++)
+    58                           ;task2.c: 51: for(i=0; i<10; i++) {
     59  0016  01A6               	clrf	?a_PIC_Int
     60  0017  01A7               	clrf	?a_PIC_Int+1
     61  0018                     l10
-    62                           ;task2.c: 54: {
-    63                           ;task2.c: 55: PORTD=~PORTD;
-    64  0018  0988               	comf	8	;volatile
-    65                           ;task2.c: 56: Delay1(150);
-    66  0019  3096               	movlw	150
-    67  001A  00A8               	movwf	?_Delay1
-    68  001B  01A9               	clrf	?_Delay1+1
-    69  001C  120A  118A  279A   	fcall	_Delay1
+    62                           ;task2.c: 52: PORTD=~PORTD;
+    63  0018  0988               	comf	8	;volatile
+    64                           ;task2.c: 53: Delay1(150);
+    65  0019  3096               	movlw	150
+    66  001A  00A8               	movwf	?_Delay1
+    67  001B  01A9               	clrf	?_Delay1+1
+    68  001C  120A  118A  279B   	fcall	_Delay1
       +       120A  118A         
-    70                           ;task2.c: 57: }
-    71  0021  0AA6               	incf	?a_PIC_Int
-    72  0022  1903               	btfsc	3,2
-    73  0023  0AA7               	incf	?a_PIC_Int+1
-    74  0024  3000               	movlw	0
-    75  0025  0227               	subwf	?a_PIC_Int+1,w
-    76  0026  300A               	movlw	10
-    77  0027  1903               	btfsc	3,2
-    78  0028  0226               	subwf	?a_PIC_Int,w
-    79  0029  1C03               	btfss	3,0
-    80  002A  2818               	goto	l10
-    81                           ;task2.c: 59: RA1 = 0;
-    82  002B  1085               	bcf	5,1
-    83                           ;task2.c: 60: RA5 = 1;
-    84  002C  1685               	bsf	5,5
-    85                           ;task2.c: 62: for(i=0; i<6; i++) {
-    86  002D  01A6               	clrf	?a_PIC_Int
-    87  002E  01A7               	clrf	?a_PIC_Int+1
-    88  002F                     l13
-    89                           ;task2.c: 63: PORTD = LED[5-i];
-    90  002F  3000               	movlw	_LED shr (0+8)
-    91  0030  008A               	movwf	10
-    92  0031  0826               	movf	?a_PIC_Int,w
-    93  0032  3C05               	sublw	5
-    94  0033  205F               	call	((_LED+-1)& (0+2047))| (($)& (0+-2048))
-    95  0034  0088               	movwf	8	;volatile
-    96                           ;task2.c: 64: Delay1(300);
-    97  0035  302C               	movlw	44
-    98  0036  00A8               	movwf	?_Delay1
-    99  0037  3001               	movlw	1
-   100  0038  00A9               	movwf	?_Delay1+1
-   101  0039  120A  118A  279A   	fcall	_Delay1
+    69                           ;task2.c: 54: }
+    70  0021  0AA6               	incf	?a_PIC_Int
+    71  0022  1903               	btfsc	3,2
+    72  0023  0AA7               	incf	?a_PIC_Int+1
+    73  0024  3000               	movlw	0
+    74  0025  0227               	subwf	?a_PIC_Int+1,w
+    75  0026  300A               	movlw	10
+    76  0027  1903               	btfsc	3,2
+    77  0028  0226               	subwf	?a_PIC_Int,w
+    78  0029  1C03               	btfss	3,0
+    79  002A  2818               	goto	l10
+    80                           ;task2.c: 56: RA1 = 0;
+    81  002B  1085               	bcf	5,1
+    82                           ;task2.c: 57: RA5 = 1;
+    83  002C  1685               	bsf	5,5
+    84                           ;task2.c: 59: for(i=0; i<6; i++) {
+    85  002D  01A6               	clrf	?a_PIC_Int
+    86  002E  01A7               	clrf	?a_PIC_Int+1
+    87  002F                     l13
+    88                           ;task2.c: 60: PORTD = LED[5-i];
+    89  002F  3000               	movlw	_LED shr (0+8)
+    90  0030  008A               	movwf	10
+    91  0031  0826               	movf	?a_PIC_Int,w
+    92  0032  3C05               	sublw	5
+    93  0033  205F               	call	((_LED+-1)& (0+2047))| (($)& (0+-2048))
+    94  0034  0088               	movwf	8	;volatile
+    95                           ;task2.c: 61: Delay1(300);
+    96  0035  302C               	movlw	44
+    97  0036  00A8               	movwf	?_Delay1
+    98  0037  3001               	movlw	1
+    99  0038  00A9               	movwf	?_Delay1+1
+   100  0039  120A  118A  279B   	fcall	_Delay1
       +       120A  118A         
-   102                           ;task2.c: 65: }
-   103  003E  0AA6               	incf	?a_PIC_Int
-   104  003F  1903               	btfsc	3,2
-   105  0040  0AA7               	incf	?a_PIC_Int+1
-   106  0041  3000               	movlw	0
-   107  0042  0227               	subwf	?a_PIC_Int+1,w
-   108  0043  3006               	movlw	6
-   109  0044  1903               	btfsc	3,2
-   110  0045  0226               	subwf	?a_PIC_Int,w
-   111  0046  1C03               	btfss	3,0
-   112  0047  282F               	goto	l13
-   113                           ;task2.c: 66: PORTD=0x00;
-   114  0048  0188               	clrf	8	;volatile
-   115                           ;task2.c: 67: RA1 = 1;
-   116  0049  1485               	bsf	5,1
-   117                           ;task2.c: 68: RA5 = 0;
-   118  004A  1285               	bcf	5,5
-   119                           ;task2.c: 71: }
-   120  004B  100B               	bcf	11,0
-   121  004C                     L1
-   122                           ;task2.c: 73: }
-   123  004C  1303               	bcf	3,6	;carry unused
-   124  004D  1283               	bcf	3,5
-   125                           
-   126                           	psect	intsave_0
-   127  0072                     saved_w
-   128  0072                     	ds	1
-   129                           
-   130                           	psect	intret
-   131  0052  082D               	movf	saved_fsr,w
-   132  0053  0084               	movwf	4	;restore FSR
-   133  0054  082E               	movf	saved_pclath,w
-   134  0055  008A               	movwf	10
-   135  0056                     int_restore
-   136  0056  082C               	movf	saved_status,w
-   137  0057  0083               	movwf	3
-   138  0058  0EF2               	swapf	saved_w
-   139  0059  0E72               	swapf	saved_w,w
-   140  005A  0009               	retfie
-   141                           
-   142                           	psect	intentry
-   143  0004                     int_entry
-   144  0004  00F2               	movwf	saved_w
-   145  0005  0803               	movf	3,w
-   146  0006  0183               	clrf	3
-   147  0007  00AC               	movwf	saved_status
-   148  0008  0804               	movf	4,w
-   149  0009  00AD               	movwf	saved_fsr
-   150  000A  080A               	movf	10,w
-   151  000B  00AE               	movwf	saved_pclath
-   152  000C  018A               	clrf	10
-   153                           ;task2.c: 76: void Delay (unsigned int delay)
-   154                           ;task2.c: 77: {
-   155                           ;       param _delay assigned to ?_Delay+0
-   156  0000                     _Delay$delay	set	?_Delay
-   157                           
-   158                           	psect	intsave
-   159  002C                     saved_status
-   160  002C                     	ds	1
-   161  002D                     saved_fsr
-   162  002D                     	ds	1
-   163  002E                     saved_pclath
-   164  002E                     	ds	1
-   165                           
-   166                           	psect	text2
-   167  07B4                     _Delay
-   168                           ;	_i assigned to ?a_Delay+0
-   169  0000                     _Delay$i	set	?a_Delay
-   170                           ;task2.c: 78: unsigned int i;
-   171  07B4  0183               	clrf	3	;select bank 0
-   172  07B5  0823               	movf	?_Delay+1,w
-   173  07B6  0422               	iorwf	?_Delay,w
-   174  07B7  1903               	btfsc	3,2
-   175  07B8  0008               	return
-   176  07B9                     l17
-   177                           ;task2.c: 80: for (i=0; i<45; i++);
-   178  07B9  01A4               	clrf	?a_Delay
-   179  07BA  01A5               	clrf	?a_Delay+1
-   180  07BB                     l20
-   181  07BB  0AA4               	incf	?a_Delay
-   182  07BC  1903               	btfsc	3,2
-   183  07BD  0AA5               	incf	?a_Delay+1
-   184  07BE  3000               	movlw	0
-   185  07BF  0225               	subwf	?a_Delay+1,w
-   186  07C0  302D               	movlw	45
-   187  07C1  1903               	btfsc	3,2
-   188  07C2  0224               	subwf	?a_Delay,w
-   189  07C3  1C03               	btfss	3,0
-   190  07C4  2FBB               	goto	l20
-   191  07C5  08A2               	movf	?_Delay
-   192  07C6  1903               	btfsc	3,2
-   193  07C7  03A3               	decf	?_Delay+1
-   194  07C8  03A2               	decf	?_Delay
-   195  07C9  0823               	movf	?_Delay+1,w
-   196  07CA  0422               	iorwf	?_Delay,w
-   197  07CB  1903               	btfsc	3,2
-   198  07CC  0008               	return
-   199  07CD  2FB9               	goto	l17
-   200  07CE                     _main
-   201                           ;	_i assigned to ?a_main+0
-   202  0000                     _main$i	set	?a_main
-   203                           ;task2.c: 21: ADCON1 = (ADCON1&0b11110000)|0b00
+   101                           ;task2.c: 62: }
+   102  003E  0AA6               	incf	?a_PIC_Int
+   103  003F  1903               	btfsc	3,2
+   104  0040  0AA7               	incf	?a_PIC_Int+1
+   105  0041  3000               	movlw	0
+   106  0042  0227               	subwf	?a_PIC_Int+1,w
+   107  0043  3006               	movlw	6
+   108  0044  1903               	btfsc	3,2
+   109  0045  0226               	subwf	?a_PIC_Int,w
+   110  0046  1C03               	btfss	3,0
+   111  0047  282F               	goto	l13
+   112                           ;task2.c: 64: PORTD=0x00;
+   113  0048  0188               	clrf	8	;volatile
+   114                           ;task2.c: 65: RA1 = 1;
+   115  0049  1485               	bsf	5,1
+   116                           ;task2.c: 66: RA5 = 0;
+   117  004A  1285               	bcf	5,5
+   118                           ;task2.c: 68: }
+   119  004B  100B               	bcf	11,0
+   120  004C                     L1
+   121                           ;task2.c: 70: }
+   122  004C  1303               	bcf	3,6	;carry unused
+   123  004D  1283               	bcf	3,5
+   124                           
+   125                           	psect	intsave_0
+   126  0072                     saved_w
+   127  0072                     	ds	1
+   128                           
+   129                           	psect	intret
+   130  0052  082D               	movf	saved_fsr,w
+   131  0053  0084               	movwf	4	;restore FSR
+   132  0054  082E               	movf	saved_pclath,w
+   133  0055  008A               	movwf	10
+   134  0056                     int_restore
+   135  0056  082C               	movf	saved_status,w
+   136  0057  0083               	movwf	3
+   137  0058  0EF2               	swapf	saved_w
+   138  0059  0E72               	swapf	saved_w,w
+   139  005A  0009               	retfie
+   140                           
+   141                           	psect	intentry
+   142  0004                     int_entry
+   143  0004  00F2               	movwf	saved_w
+   144  0005  0803               	movf	3,w
+   145  0006  0183               	clrf	3
+   146  0007  00AC               	movwf	saved_status
+   147  0008  0804               	movf	4,w
+   148  0009  00AD               	movwf	saved_fsr
+   149  000A  080A               	movf	10,w
+   150  000B  00AE               	movwf	saved_pclath
+   151  000C  018A               	clrf	10
+   152                           ;task2.c: 73: void Delay (unsigned int delay) {
+   153                           ;       param _delay assigned to ?_Delay+0
+   154  0000                     _Delay$delay	set	?_Delay
+   155                           
+   156                           	psect	intsave
+   157  002C                     saved_status
+   158  002C                     	ds	1
+   159  002D                     saved_fsr
+   160  002D                     	ds	1
+   161  002E                     saved_pclath
+   162  002E                     	ds	1
+   163                           
+   164                           	psect	text2
+   165  07B5                     _Delay
+   166                           ;	_i assigned to ?a_Delay+0
+   167  0000                     _Delay$i	set	?a_Delay
+   168                           ;task2.c: 74: unsigned int i;
+   169  07B5  0183               	clrf	3	;select bank 0
+   170  07B6  0823               	movf	?_Delay+1,w
+   171  07B7  0422               	iorwf	?_Delay,w
+   172  07B8  1903               	btfsc	3,2
+   173  07B9  0008               	return
+   174  07BA                     l17
+   175                           ;task2.c: 76: for (i=0; i<45; i++);
+   176  07BA  01A4               	clrf	?a_Delay
+   177  07BB  01A5               	clrf	?a_Delay+1
+   178  07BC                     l20
+   179  07BC  0AA4               	incf	?a_Delay
+   180  07BD  1903               	btfsc	3,2
+   181  07BE  0AA5               	incf	?a_Delay+1
+   182  07BF  3000               	movlw	0
+   183  07C0  0225               	subwf	?a_Delay+1,w
+   184  07C1  302D               	movlw	45
+   185  07C2  1903               	btfsc	3,2
+   186  07C3  0224               	subwf	?a_Delay,w
+   187  07C4  1C03               	btfss	3,0
+   188  07C5  2FBC               	goto	l20
+   189  07C6  08A2               	movf	?_Delay
+   190  07C7  1903               	btfsc	3,2
+   191  07C8  03A3               	decf	?_Delay+1
+   192  07C9  03A2               	decf	?_Delay
+   193  07CA  0823               	movf	?_Delay+1,w
+   194  07CB  0422               	iorwf	?_Delay,w
+   195  07CC  1903               	btfsc	3,2
+   196  07CD  0008               	return
+   197  07CE  2FBA               	goto	l17
+   198  07CF                     _main
+   199                           ;	_i assigned to ?a_main+0
+   200  0000                     _main$i	set	?a_main
+   201                           ;task2.c: 21: ADCON1 = (ADCON1&0b11110000)|0b00
       +                          000111;
-   204  07CE  1683               	bsf	3,5
-   205  07CF  1303               	bcf	3,6	;carry unused
-   206  07D0  081F               	movf	31,w	;volatile
-   207  07D1  39F0               	andlw	-16
-   208  07D2  3807               	iorlw	7
-   209  07D3  009F               	movwf	31	;volatile
-   210                           ;task2.c: 22: TRISB = (TRISB&0b11001110)|0b0011
-      +                          0001;
-   211  07D4  0806               	movf	6,w	;volatile
-   212  07D5  39CE               	andlw	-50
-   213  07D6  3831               	iorlw	49
-   214  07D7  0086               	movwf	6	;volatile
-   215                           ;task2.c: 23: TRISD = 0x00;
-   216  07D8  0188               	clrf	8	;volatile
-   217                           ;task2.c: 24: TRISA = TRISA&0b11011101;
-   218  07D9  30DD               	movlw	-35
-   219  07DA  0585               	andwf	5	;volatile
-   220                           ;task2.c: 27: INTEDG = 1;
-   221  07DB  1701               	bsf	1,6
-   222                           ;task2.c: 28: RBIE = 1;
-   223  07DC  158B               	bsf	11,3
-   224                           ;task2.c: 29: RBIF = 0;
-   225  07DD  100B               	bcf	11,0
-   226                           ;task2.c: 30: GIE = 1;
-   227  07DE  178B               	bsf	11,7
-   228                           ;task2.c: 31: RA1 = 1;
-   229  07DF  1283               	bcf	3,5
-   230  07E0  1485               	bsf	5,1
-   231                           ;task2.c: 32: RA5 = 0;
-   232  07E1  1285               	bcf	5,5
-   233  07E2                     l3
-   234                           ;task2.c: 34: while(1){
-   235                           ;task2.c: 35: unsigned int i;
-   236  07E2  01A0               	clrf	?a_main
-   237  07E3  01A1               	clrf	?a_main+1
-   238  07E4                     l5
-   239                           ;task2.c: 37: {
-   240                           ;task2.c: 38: PORTD=(0x01<<i);
-   241  07E4  3001               	movlw	1
-   242  07E5  00F0               	movwf	btemp
-   243  07E6  0820               	movf	?a_main,w
-   244  07E7  00F1               	movwf	btemp+1
-   245  07E8  0AF1               	incf	btemp+1
-   246  07E9  2FEC               	goto	u14
-   247  07EA                     u15
-   248  07EA  1003               	bcf	3,0
-   249  07EB  0DF0               	rlf	btemp
-   250  07EC                     u14
-   251  07EC  0BF1               	decfsz	btemp+1
-   252  07ED  2FEA               	goto	u15
-   253  07EE  0870               	movf	btemp,w
-   254  07EF  0088               	movwf	8	;volatile
-   255                           ;task2.c: 39: Delay(1000);
-   256  07F0  30E8               	movlw	232
-   257  07F1  00A2               	movwf	?_Delay
-   258  07F2  3003               	movlw	3
-   259  07F3  00A3               	movwf	?_Delay+1
-   260  07F4  27B4               	fcall	_Delay
-   261                           ;task2.c: 40: }
-   262  07F5  0AA0               	incf	?a_main
-   263  07F6  1903               	btfsc	3,2
-   264  07F7  0AA1               	incf	?a_main+1
-   265  07F8  3000               	movlw	0
-   266  07F9  0221               	subwf	?a_main+1,w
-   267  07FA  3008               	movlw	8
-   268  07FB  1903               	btfsc	3,2
-   269  07FC  0220               	subwf	?a_main,w
-   270  07FD  1803               	btfsc	3,0
-   271  07FE  2FE2               	goto	l3
-   272  07FF  2FE4               	goto	l5
-   273                           
-   274                           	psect	text3
-   275  079A                     _Delay1
-   276                           ;	_i assigned to ?a_Delay1+0
-   277  0000                     _Delay1$i	set	?a_Delay1
-   278                           ;task2.c: 85: unsigned int i;
-   279  079A  0183               	clrf	3	;select bank 0
-   280  079B  0829               	movf	?_Delay1+1,w
-   281  079C  0428               	iorwf	?_Delay1,w
-   282  079D  1903               	btfsc	3,2
-   283  079E  0008               	return
-   284  079F                     l24
-   285                           ;task2.c: 87: for (i=0; i<45; i++);
-   286  079F  01AA               	clrf	?a_Delay1
-   287  07A0  01AB               	clrf	?a_Delay1+1
-   288  07A1                     l27
-   289  07A1  0AAA               	incf	?a_Delay1
-   290  07A2  1903               	btfsc	3,2
-   291  07A3  0AAB               	incf	?a_Delay1+1
-   292  07A4  3000               	movlw	0
-   293  07A5  022B               	subwf	?a_Delay1+1,w
-   294  07A6  302D               	movlw	45
-   295  07A7  1903               	btfsc	3,2
-   296  07A8  022A               	subwf	?a_Delay1,w
-   297  07A9  1C03               	btfss	3,0
-   298  07AA  2FA1               	goto	l27
-   299  07AB  08A8               	movf	?_Delay1
-   300  07AC  1903               	btfsc	3,2
-   301  07AD  03A9               	decf	?_Delay1+1
-   302  07AE  03A8               	decf	?_Delay1
-   303  07AF  0829               	movf	?_Delay1+1,w
-   304  07B0  0428               	iorwf	?_Delay1,w
-   305  07B1  1903               	btfsc	3,2
-   306  07B2  0008               	return
-   307  07B3  2F9F               	goto	l24
-   308                           
-   309                           	psect	text4
+   202  07CF  1683               	bsf	3,5
+   203  07D0  1303               	bcf	3,6	;carry unused
+   204  07D1  081F               	movf	31,w	;volatile
+   205  07D2  39F0               	andlw	-16
+   206  07D3  3807               	iorlw	7
+   207  07D4  009F               	movwf	31	;volatile
+   208                           ;task2.c: 22: TRISB = (TRISB&0b11001111)|0b0011
+      +                          0000;
+   209  07D5  0806               	movf	6,w	;volatile
+   210  07D6  39CF               	andlw	-49
+   211  07D7  3830               	iorlw	48
+   212  07D8  0086               	movwf	6	;volatile
+   213                           ;task2.c: 23: TRISD = 0x00;
+   214  07D9  0188               	clrf	8	;volatile
+   215                           ;task2.c: 24: TRISA = TRISA&0b11011101;
+   216  07DA  30DD               	movlw	-35
+   217  07DB  0585               	andwf	5	;volatile
+   218                           ;task2.c: 27: RBIE = 1;
+   219  07DC  158B               	bsf	11,3
+   220                           ;task2.c: 28: RBIF = 0;
+   221  07DD  100B               	bcf	11,0
+   222                           ;task2.c: 29: GIE = 1;
+   223  07DE  178B               	bsf	11,7
+   224                           ;task2.c: 30: RA1 = 1;
+   225  07DF  1283               	bcf	3,5
+   226  07E0  1485               	bsf	5,1
+   227                           ;task2.c: 31: RA5 = 0;
+   228  07E1  1285               	bcf	5,5
+   229  07E2                     l3
+   230                           ;task2.c: 33: while(1){
+   231                           ;task2.c: 34: unsigned int i;
+   232  07E2  01A0               	clrf	?a_main
+   233  07E3  01A1               	clrf	?a_main+1
+   234  07E4                     l5
+   235                           ;task2.c: 36: PORTD=(0x01<<i);
+   236  07E4  3001               	movlw	1
+   237  07E5  00F0               	movwf	btemp
+   238  07E6  0820               	movf	?a_main,w
+   239  07E7  00F1               	movwf	btemp+1
+   240  07E8  0AF1               	incf	btemp+1
+   241  07E9  2FEC               	goto	u14
+   242  07EA                     u15
+   243  07EA  1003               	bcf	3,0
+   244  07EB  0DF0               	rlf	btemp
+   245  07EC                     u14
+   246  07EC  0BF1               	decfsz	btemp+1
+   247  07ED  2FEA               	goto	u15
+   248  07EE  0870               	movf	btemp,w
+   249  07EF  0088               	movwf	8	;volatile
+   250                           ;task2.c: 37: Delay(1000);
+   251  07F0  30E8               	movlw	232
+   252  07F1  00A2               	movwf	?_Delay
+   253  07F2  3003               	movlw	3
+   254  07F3  00A3               	movwf	?_Delay+1
+   255  07F4  27B5               	fcall	_Delay
+   256                           ;task2.c: 38: }
+   257  07F5  0AA0               	incf	?a_main
+   258  07F6  1903               	btfsc	3,2
+   259  07F7  0AA1               	incf	?a_main+1
+   260  07F8  3000               	movlw	0
+   261  07F9  0221               	subwf	?a_main+1,w
+   262  07FA  3008               	movlw	8
+   263  07FB  1903               	btfsc	3,2
+   264  07FC  0220               	subwf	?a_main,w
+   265  07FD  1803               	btfsc	3,0
+   266  07FE  2FE2               	goto	l3
+   267  07FF  2FE4               	goto	l5
+   268                           
+   269                           	psect	text3
+   270  079B                     _Delay1
+   271                           ;	_i assigned to ?a_Delay1+0
+   272  0000                     _Delay1$i	set	?a_Delay1
+   273                           ;task2.c: 81: unsigned int i;
+   274  079B  0183               	clrf	3	;select bank 0
+   275  079C  0829               	movf	?_Delay1+1,w
+   276  079D  0428               	iorwf	?_Delay1,w
+   277  079E  1903               	btfsc	3,2
+   278  079F  0008               	return
+   279  07A0                     l24
+   280                           ;task2.c: 83: for (i=0; i<45; i++);
+   281  07A0  01AA               	clrf	?a_Delay1
+   282  07A1  01AB               	clrf	?a_Delay1+1
+   283  07A2                     l27
+   284  07A2  0AAA               	incf	?a_Delay1
+   285  07A3  1903               	btfsc	3,2
+   286  07A4  0AAB               	incf	?a_Delay1+1
+   287  07A5  3000               	movlw	0
+   288  07A6  022B               	subwf	?a_Delay1+1,w
+   289  07A7  302D               	movlw	45
+   290  07A8  1903               	btfsc	3,2
+   291  07A9  022A               	subwf	?a_Delay1,w
+   292  07AA  1C03               	btfss	3,0
+   293  07AB  2FA2               	goto	l27
+   294  07AC  08A8               	movf	?_Delay1
+   295  07AD  1903               	btfsc	3,2
+   296  07AE  03A9               	decf	?_Delay1+1
+   297  07AF  03A8               	decf	?_Delay1
+   298  07B0  0829               	movf	?_Delay1+1,w
+   299  07B1  0428               	iorwf	?_Delay1,w
+   300  07B2  1903               	btfsc	3,2
+   301  07B3  0008               	return
+   302  07B4  2FA0               	goto	l24
+   303                           
+   304                           	psect	text4
+   305  0000                     
+   306  0000                     
+   307  0000                     
+   308  0000                     
+   309  0000                     
    310  0000                     
    311  0000                     
    312  0000                     
@@ -591,31 +591,26 @@ Licensed to: ONE TWO
    578  0000                     
    579  0000                     
    580  0000                     
-   581  0000                     
-   582  0000                     
-   583  0000                     
-   584  0000                     
-   585  0000                     
-   586                           
-   587                           	psect	temp
-   588  0070                     btemp
-   589  0070                     	ds	2
+   581                           
+   582                           	psect	temp
+   583  0070                     btemp
+   584  0070                     	ds	2
 
 
 HI-TECH Software PICC Macro Assembler V8.05PL2
-Symbol Table                                          Thu Oct 17 23:48:05 2019
+Symbol Table                                          Fri Oct 18 00:41:38 2019
 
       ?a_main 0020             l3 07E2             l5 07E4  
-           pc 0002            l10 0018            l20 07BB  
-          l13 002F            l24 079F            l17 07B9  
-          l27 07A1            u14 07EC            u15 07EA  
-          fsr 0004           _LED 0060        _Delay1 079A  
+           pc 0002            l10 0018            l20 07BC  
+          l13 002F            l24 07A0            l17 07BA  
+          l27 07A2            u14 07EC            u15 07EA  
+          fsr 0004           _LED 0060        _Delay1 079B  
      _PIC_Int 0011  save_code_ptr 0011    save_btemp0 000D  
   save_btemp1 000F    save_btemp2 0011    save_btemp3 0011  
   save_btemp4 0011    save_btemp5 0011    save_btemp6 0011  
   save_btemp7 0011    save_btemp8 0011    save_btemp9 0011  
-        _main 07CE          btemp 0070          start 005B  
-      saved_w 0072      int_entry 0004         _Delay 07B4  
+        _main 07CF          btemp 0070          start 005B  
+      saved_w 0072      int_entry 0004         _Delay 07B5  
     saved_fsr 002D   save_btemp10 000F   save_btemp11 000F  
  save_btemp12 000F   save_btemp13 000F   save_btemp14 000F  
  saved_pclath 002E         pclath 000A   saved_status 002C  

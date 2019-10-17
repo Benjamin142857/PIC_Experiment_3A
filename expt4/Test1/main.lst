@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PICC Macro Assembler V8.05PL2
-Serial number: HCPIC-88888                            Thu Oct 17 22:09:57 2019
+Serial number: HCPIC-88888                            Fri Oct 18 00:46:20 2019
 
 Licensed to: ONE TWO
      1                           	processor	16F877A
@@ -25,86 +25,86 @@ Licensed to: ONE TWO
     19  0190                     
     20                           
     21                           	psect	text1
-    22  07D7                     _delay_10ms
+    22  07CD                     _delay_10ms
     23                           ;	_i assigned to ?a_delay_10ms+0
     24  0000                     _delay_10ms$i	set	?a_delay_10ms
-    25                           ;main.c: 24: unsigned int i;
-    26  07D7  3007               	movlw	7
-    27  07D8  1683               	bsf	3,5
-    28  07D9  1303               	bcf	3,6	;carry unused
-    29  07DA  0081               	movwf	1
-    30                           ;main.c: 26: T0IF = 0;
-    31  07DB  110B               	bcf	11,2
-    32                           ;main.c: 28: for (i=0; i<n; i++) {
-    33  07DC  1283               	bcf	3,5
-    34  07DD  01A2               	clrf	?a_delay_10ms
-    35  07DE  01A3               	clrf	?a_delay_10ms+1
-    36  07DF  2FE8               	goto	l9
-    37  07E0                     l6
-    38                           ;main.c: 29: TMR0 = 0x8B;;
-    39  07E0  308B               	movlw	-117
-    40  07E1  0081               	movwf	1	;volatile
-    41                           ;main.c: 30: while(!T0IF);
-    42  07E2                     l10
-    43  07E2  1D0B               	btfss	11,2
-    44  07E3  2FE2               	goto	l10
-    45                           ;main.c: 31: T0IF = 0;
-    46  07E4  110B               	bcf	11,2
-    47                           ;main.c: 32: }
-    48  07E5  0AA2               	incf	?a_delay_10ms
-    49  07E6  1903               	btfsc	3,2
-    50  07E7  0AA3               	incf	?a_delay_10ms+1
-    51  07E8                     l9
-    52  07E8  0821               	movf	?_delay_10ms+1,w
-    53  07E9  0223               	subwf	?a_delay_10ms+1,w
-    54  07EA  1D03               	btfss	3,2
-    55  07EB  2FEE               	goto	u25
-    56  07EC  0820               	movf	?_delay_10ms,w
-    57  07ED  0222               	subwf	?a_delay_10ms,w
-    58  07EE                     u25
-    59  07EE  1803               	btfsc	3,0
-    60  07EF  0008               	return
-    61  07F0  2FE0               	goto	l6
-    62  07F1                     _main
+    25                           ;main.c: 28: unsigned int i;
+    26  07CD  3007               	movlw	7
+    27  07CE  1683               	bsf	3,5
+    28  07CF  1303               	bcf	3,6	;carry unused
+    29  07D0  0081               	movwf	1
+    30                           ;main.c: 30: T0IF = 0;
+    31  07D1  110B               	bcf	11,2
+    32                           ;main.c: 32: for (i=0; i<n; i++) {
+    33  07D2  1283               	bcf	3,5
+    34  07D3  01A2               	clrf	?a_delay_10ms
+    35  07D4  01A3               	clrf	?a_delay_10ms+1
+    36  07D5  2FDE               	goto	l9
+    37  07D6                     l6
+    38                           ;main.c: 33: TMR0 = 0xD9;;
+    39  07D6  30D9               	movlw	-39
+    40  07D7  0081               	movwf	1	;volatile
+    41                           ;main.c: 34: while(!T0IF);
+    42  07D8                     l10
+    43  07D8  1D0B               	btfss	11,2
+    44  07D9  2FD8               	goto	l10
+    45                           ;main.c: 35: T0IF = 0;
+    46  07DA  110B               	bcf	11,2
+    47                           ;main.c: 36: }
+    48  07DB  0AA2               	incf	?a_delay_10ms
+    49  07DC  1903               	btfsc	3,2
+    50  07DD  0AA3               	incf	?a_delay_10ms+1
+    51  07DE                     l9
+    52  07DE  0821               	movf	?_delay_10ms+1,w
+    53  07DF  0223               	subwf	?a_delay_10ms+1,w
+    54  07E0  1D03               	btfss	3,2
+    55  07E1  2FE4               	goto	u25
+    56  07E2  0820               	movf	?_delay_10ms,w
+    57  07E3  0222               	subwf	?a_delay_10ms,w
+    58  07E4                     u25
+    59  07E4  1803               	btfsc	3,0
+    60  07E5  0008               	return
+    61  07E6  2FD6               	goto	l6
+    62  07E7                     _main
     63                           ;main.c: 10: TRISC1 = 0;
-    64  07F1  1683               	bsf	3,5
-    65  07F2  1303               	bcf	3,6	;carry unused
-    66  07F3  1087               	bcf	7,1
-    67  07F4                     l3
+    64  07E7  1683               	bsf	3,5
+    65  07E8  1303               	bcf	3,6	;carry unused
+    66  07E9  1087               	bcf	7,1
+    67  07EA                     l3
     68                           ;main.c: 12: while(1) {
     69                           ;main.c: 14: RC1 = 0;
-    70  07F4  1283               	bcf	3,5
-    71  07F5  1087               	bcf	7,1
-    72                           ;main.c: 15: delay_10ms(90);
-    73  07F6  305A               	movlw	90
-    74  07F7  00A0               	movwf	?_delay_10ms
-    75  07F8  01A1               	clrf	?_delay_10ms+1
-    76  07F9  27D7               	fcall	_delay_10ms
+    70  07EA  1283               	bcf	3,5
+    71  07EB  1087               	bcf	7,1
+    72                           ;main.c: 15: delay_10ms(25);
+    73  07EC  3019               	movlw	25
+    74  07ED  00A0               	movwf	?_delay_10ms
+    75  07EE  01A1               	clrf	?_delay_10ms+1
+    76  07EF  27CD               	fcall	_delay_10ms
     77                           ;main.c: 16: RC1 = 1;
-    78  07FA  1487               	bsf	7,1
-    79                           ;main.c: 17: delay_10ms(10);
-    80  07FB  300A               	movlw	10
-    81  07FC  00A0               	movwf	?_delay_10ms
-    82  07FD  01A1               	clrf	?_delay_10ms+1
-    83  07FE  27D7               	fcall	_delay_10ms
-    84                           ;main.c: 19: }
-    85  07FF  2FF4               	goto	l3
-    86                           
-    87                           	psect	text2
-    88  0000                     
-    89  0000                     
-    90  0000                     
-    91  0000                     
-    92  0000                     
-    93  0000                     
-    94  0000                     
-    95  0000                     
-    96  0000                     
-    97  0000                     
-    98  0000                     
-    99  0000                     
-   100  0000                     
-   101  0000                     
+    78  07F0  1487               	bsf	7,1
+    79                           ;main.c: 17: delay_10ms(25);
+    80  07F1  3019               	movlw	25
+    81  07F2  00A0               	movwf	?_delay_10ms
+    82  07F3  01A1               	clrf	?_delay_10ms+1
+    83  07F4  27CD               	fcall	_delay_10ms
+    84                           ;main.c: 18: RC1 = 0;
+    85  07F5  1087               	bcf	7,1
+    86                           ;main.c: 19: delay_10ms(25);
+    87  07F6  3019               	movlw	25
+    88  07F7  00A0               	movwf	?_delay_10ms
+    89  07F8  01A1               	clrf	?_delay_10ms+1
+    90  07F9  27CD               	fcall	_delay_10ms
+    91                           ;main.c: 20: RC1 = 1;
+    92  07FA  1487               	bsf	7,1
+    93                           ;main.c: 21: delay_10ms(25);
+    94  07FB  3019               	movlw	25
+    95  07FC  00A0               	movwf	?_delay_10ms
+    96  07FD  01A1               	clrf	?_delay_10ms+1
+    97  07FE  27CD               	fcall	_delay_10ms
+    98                           ;main.c: 23: }
+    99  07FF  2FEA               	goto	l3
+   100                           
+   101                           	psect	text2
    102  0000                     
    103  0000                     
    104  0000                     
@@ -367,12 +367,26 @@ Licensed to: ONE TWO
    361  0000                     
    362  0000                     
    363  0000                     
+   364  0000                     
+   365  0000                     
+   366  0000                     
+   367  0000                     
+   368  0000                     
+   369  0000                     
+   370  0000                     
+   371  0000                     
+   372  0000                     
+   373  0000                     
+   374  0000                     
+   375  0000                     
+   376  0000                     
+   377  0000                     
 
 
 HI-TECH Software PICC Macro Assembler V8.05PL2
-Symbol Table                                          Thu Oct 17 22:09:57 2019
+Symbol Table                                          Fri Oct 18 00:46:20 2019
 
-           l3 07F4             l6 07E0             l9 07E8  
-  _delay_10ms 07D7            l10 07E2            u25 07EE  
-        _main 07F1          start 0004  ?a_delay_10ms 0022  
+           l3 07EA             l6 07D6             l9 07DE  
+  _delay_10ms 07CD            l10 07D8            u25 07E4  
+        _main 07E7          start 0004  ?a_delay_10ms 0022  
        status 0003   ?_delay_10ms 0020  

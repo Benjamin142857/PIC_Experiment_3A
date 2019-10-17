@@ -2,14 +2,14 @@ __S0 2100 0
 __S1 190 0
 __H__Z88888RS_ 190 0
 __L__Z88888RS_ 190 0
-_main 7F1 0 CODE
+_main 7E7 0 CODE
 _exit 4 0 CODE
 start 4 0 CODE
 __Hintsave_0 190 0
 __Lintsave_0 190 0
 __Hintcode 4 0 CODE
 __Lintcode 4 0 CODE
-_delay_10ms 7D7 0 CODE
+_delay_10ms 7CD 0 CODE
 __Hintsave_1 190 0
 __Lintsave_1 190 0
 __Hintsave_2 190 0
@@ -131,22 +131,26 @@ __Lstringtable 8 0 ENTRY
 powerup 0 7 CODE
 intentry 8 F CODE
 rbit_0 100 103 BANK0
-text1 FAE FFF CODE
+text1 F9A FFF CODE
 %locals
 E:\#Programming\Electronics\MPLAB\PIC_Experiment_3B\expt4\Test1\main.obj
 status 3
 E:\#Programming\Electronics\MPLAB\PIC_Experiment_3B\expt4\Test1\main.c
-23 7D7 0 CODE
-25 7D7 0 CODE
-26 7DB 0 CODE
-28 7DC 0 CODE
-29 7E0 0 CODE
-30 7E2 0 CODE
-31 7E4 0 CODE
-28 7E5 0 CODE
-10 7F1 0 CODE
-14 7F4 0 CODE
-15 7F6 0 CODE
-16 7FA 0 CODE
-17 7FB 0 CODE
+27 7CD 0 CODE
+29 7CD 0 CODE
+30 7D1 0 CODE
+32 7D2 0 CODE
+33 7D6 0 CODE
+34 7D8 0 CODE
+35 7DA 0 CODE
+32 7DB 0 CODE
+10 7E7 0 CODE
+14 7EA 0 CODE
+15 7EC 0 CODE
+16 7F0 0 CODE
+17 7F1 0 CODE
+18 7F5 0 CODE
+19 7F6 0 CODE
+20 7FA 0 CODE
+21 7FB 0 CODE
 12 7FF 0 CODE
