@@ -24,9 +24,10 @@ void main() {
 	TRISA = TRISA&0b11011101;   					// RA1(COL1,排灯1，倒数第一个LED),RA5(COL4,排灯4，倒数第四个LED)，设置为输出；
 
 	
-	RBIE = 1;		// SW3 变化中断使能
-	RBIF = 0;		// SW3 变化中断标志清除
+	RBIE = 1;		// SW2,SW3 变化中断使能
+	RBIF = 0;		// SW2,SW3 变化中断标志清除
     GIE = 1;       	// 使能总中断
+
 	RA1 = 1;		// RA1(COL1,排灯)，使能
     RA5 = 0;       	// RA5(COL4,倒数第四个LED)，关；
 
@@ -48,6 +49,7 @@ void interrupt PIC_Int(void) {
 	if(RBIF) {
 		PORTD=0x00;             //灭掉所有LED
 		
+
 		for(i=0; i<10; i++)  {
 	       PORTD=~PORTD;    //点亮所有LED
 	       Delay1(150);       //调用Delay1延时函数，设置延时参数为150
@@ -62,6 +64,7 @@ void interrupt PIC_Int(void) {
 		} 
 
 		PORTD=0x00;             //灭掉所有LED
+
 		RA1 = 1;				// RA1(COL1,排灯)，使能
    		RA5 = 0;       			// RA5(COL4,倒数第四个LED)，关；
 			

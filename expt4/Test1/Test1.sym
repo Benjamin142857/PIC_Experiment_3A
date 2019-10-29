@@ -2,14 +2,13 @@ __S0 2100 0
 __S1 190 0
 __H__Z88888RS_ 190 0
 __L__Z88888RS_ 190 0
-_main 7E7 0 CODE
+_main 7F0 0 CODE
 _exit 4 0 CODE
 start 4 0 CODE
 __Hintsave_0 190 0
 __Lintsave_0 190 0
 __Hintcode 4 0 CODE
 __Lintcode 4 0 CODE
-_delay_10ms 7CD 0 CODE
 __Hintsave_1 190 0
 __Lintsave_1 190 0
 __Hintsave_2 190 0
@@ -18,7 +17,6 @@ __Hintsave 190 0
 __Lintsave 190 0
 __Hintsave_3 190 0
 __Lintsave_3 190 0
-?_delay_10ms 20 0 BANK0
 __Hcode 190 0
 __Lcode 190 0
 __Hstrings 8 0 STRING
@@ -36,15 +34,14 @@ __Hvectors 8 0 CODE
 __Lvectors 8 0 CODE
 __Hclrtext 8 0 CODE
 __Lclrtext 8 0 CODE
-?a_delay_10ms 22 0 BANK0
 __Hidloc 2000 0 IDLOC
 __Lidloc 2000 0 IDLOC
 __Hpstrings 8 0 CODE
 __Lpstrings 8 0 CODE
 __Hend_init 8 0 CODE
 __Lend_init 4 0 CODE
-__Hnvram 24 0 BANK0
-__Lnvram 24 0 BANK0
+__Hnvram 20 0 BANK0
+__Lnvram 20 0 BANK0
 __Hfloat_text0 8 0 CODE
 __Lfloat_text0 8 0 CODE
 __Hinit23 4 0 CODE
@@ -55,7 +52,7 @@ __Brbit_0 20 FFFFFF20 BANK0
 __Hrbit_0 100 FFFFFF20 BANK0
 __Lrbit_0 100 FFFFFF20 BANK0
 __Brbit_1 A0 FFFFFBA0 BANK1
-__Hrbss_0 24 0 BANK0
+__Hrbss_0 20 0 BANK0
 __Hrbit_1 500 FFFFFBA0 BANK1
 __Lrbss_0 20 0 BANK0
 __Lrbit_1 500 FFFFFBA0 BANK1
@@ -83,16 +80,16 @@ __Hfloat_text3 8 0 CODE
 __Lfloat_text3 8 0 CODE
 __Hintret 4 0 CODE
 __Lintret 4 0 CODE
-__Hstruct 24 0 BANK0
-__Lstruct 24 0 BANK0
+__Hstruct 20 0 BANK0
+__Lstruct 20 0 BANK0
 __Hfloat_text4 8 0 CODE
 __Lfloat_text4 8 0 CODE
 __Hcommon_ram 190 0
 __Lcommon_ram 190 0
 __Hidata_0 8 0 CODE
 __Lidata_0 8 0 CODE
-__Hrdata_0 24 0 BANK0
-__Lrdata_0 24 0 BANK0
+__Hrdata_0 20 0 BANK0
+__Lrdata_0 20 0 BANK0
 __Hidata_1 8 0 CODE
 __Lidata_1 8 0 CODE
 __Heeprom_data 2100 0 EEDATA
@@ -109,9 +106,9 @@ __Hrdata_3 190 0 BANK3
 __Lrdata_3 190 0 BANK3
 __Hnvram_1 A0 0 BANK1
 __Lnvram_1 A0 0 BANK1
-__Bnvbit_0 24 FFFFFF04 BANK0
-__Hnvbit_0 120 FFFFFF04 BANK0
-__Lnvbit_0 120 FFFFFF04 BANK0
+__Bnvbit_0 20 FFFFFF20 BANK0
+__Hnvbit_0 100 FFFFFF20 BANK0
+__Lnvbit_0 100 FFFFFF20 BANK0
 __Hnvram_2 110 0 BANK2
 __Lnvram_2 110 0 BANK2
 __Bnvbit_1 A0 FFFFFBA0 BANK1
@@ -130,27 +127,17 @@ __Lstringtable 8 0 ENTRY
 %segments
 powerup 0 7 CODE
 intentry 8 F CODE
-rbit_0 100 103 BANK0
-text1 F9A FFF CODE
+text0 FE0 FFF CODE
 %locals
-E:\#Programming\Electronics\MPLAB\PIC_Experiment_3B\expt4\Test1\main.obj
+E:\#Programming\Electronics\MPLAB\PIC_Experiment_3B\expt4\Test1\task2_counter.obj
 status 3
-E:\#Programming\Electronics\MPLAB\PIC_Experiment_3B\expt4\Test1\main.c
-27 7CD 0 CODE
-29 7CD 0 CODE
-30 7D1 0 CODE
-32 7D2 0 CODE
-33 7D6 0 CODE
-34 7D8 0 CODE
-35 7DA 0 CODE
-32 7DB 0 CODE
-10 7E7 0 CODE
-14 7EA 0 CODE
-15 7EC 0 CODE
-16 7F0 0 CODE
-17 7F1 0 CODE
-18 7F5 0 CODE
-19 7F6 0 CODE
-20 7FA 0 CODE
-21 7FB 0 CODE
-12 7FF 0 CODE
+E:\#Programming\Electronics\MPLAB\PIC_Experiment_3B\expt4\Test1\task2_counter.c
+6 7F0 0 CODE
+7 7F6 0 CODE
+8 7F7 0 CODE
+10 7F8 0 CODE
+11 7F9 0 CODE
+12 7FB 0 CODE
+15 7FC 0 CODE
+19 7FD 0 CODE
+18 7FF 0 CODE
