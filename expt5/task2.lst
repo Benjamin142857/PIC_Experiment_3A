@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PICC Macro Assembler V8.05PL2
-Serial number: HCPIC-88888                            Thu Oct 31 20:26:11 2019
+Serial number: HCPIC-88888                            Fri Nov  1 10:31:12 2019
 
 Licensed to: ONE TWO
      1                           	processor	16F877A
@@ -456,7 +456,7 @@ Licensed to: ONE TWO
 
 
 HI-TECH Software PICC Macro Assembler V8.05PL2
-Symbol Table                                          Thu Oct 31 20:26:11 2019
+Symbol Table                                          Fri Nov  1 10:31:12 2019
 
     ?_delay 0020           l3 07C9           l5 07D9     ?a_delay 0022  
         l13 079E          l16 07A2          u65 07F9        _main 07C8  

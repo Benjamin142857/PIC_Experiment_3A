@@ -16,7 +16,7 @@ Linker command line:
   -pfloat_text3=CODE,float_text4=CODE \
   -pnvram=BANK0,nvram_1=BANK1,nvram_2=BANK2,nvram_3=BANK3 \
   -pnvbit_0=BANK0,nvbit_1=BANK1,nvbit_2=BANK2,nvbit_3=BANK3 -Q16F877A \
-  -h+project.sym -E -EC:\Users\VULCAN\AppData\Local\Temp\_DMS.AAA \
+  -h+project.sym -E -EC:\Users\VULCAN\AppData\Local\Temp\_A1G.AAA \
   -ver=PICC#V8.05PL2 d:\mplab\PICC\LIB\picrt42c.obj \
   E:\#Programming\Electronics\MPLAB\PIC_Experiment_3B\expt5\task2.obj \
   d:\mplab\PICC\LIB\pic62--u.lib d:\mplab\PICC\LIB\pic42c-c.lib \

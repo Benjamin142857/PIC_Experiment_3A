@@ -52,5 +52,4 @@ void delay(unsigned int ms) {
 	for(;ms>0;ms--) {
 		for(i=1000; i>0; i--);
 	}
-    
 }
