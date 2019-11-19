@@ -5,20 +5,25 @@ void init_USART();
 
 void main(void) {
     init_USART();
-    while(1) {
-        TXREG = 0x32;
-        while(!TRMT);
-        delay(10);
-    }
+	while(1) {
+		if(RCIF) {
+			PORTD = RCREG-0x30;
+			RCIF=0;
+		}
+	}
 }
 
 void init_USART() {
     TRISC6 = 0;
     TRISC7 = 1;
+	TRISD = 0;
+	TRISA1 = 0;
+	RA1 = 1;
     TXSTA = 0b00100100;
     RCSTA = 0b10010000;
     SPBRG = 25;
     INTCON = 0x00;
+
 }
 
 void delay(int t) {
@@ -27,4 +32,3 @@ void delay(int t) {
         for(j=0; j<100; j++);
     }
 }
-

@@ -1,0 +1,6 @@
+_init: CODE, 1725 0 20
+_delay: CODE, 1745 0 36
+_main: CODE, 1859 0 189
+___lwdiv: CODE, 1817 0 42
+___lwmod: CODE, 1781 0 36
+Total: 323
