@@ -319,6 +319,10 @@ void main(void)
 
 
 
+
+
+
+
 ~~~C
 #include<pic.h>
 __CONFIG(XT&WDTDIS&LVPDIS);
@@ -379,5 +383,290 @@ void main(void)
 		}
 	}	
 }
+~~~
+
+
+
+
+
+~~~c
+#include <pic.h>
+// __CONFIG(XT&WDTDIS&LVPDIS);
+
+
+#define CONST_T 0xD9;
+
+void delay_10ms (unsigned int n);
+
+void main() {
+	TRISC1 = 0;				// RC1输出
+
+	while(1) {
+
+		RC1 = 0;			// 关蜂鸣器
+		delay_10ms(25); 	// 900ms
+		RC1 = 1;			// 开蜂鸣器
+		delay_10ms(25);		// 100ms
+		RC1 = 0;			// 关蜂鸣器
+		delay_10ms(25); 	// 900ms
+		RC1 = 1;			// 开蜂鸣器
+		delay_10ms(25);		// 100ms
+
+	}
+
+}
+
+void delay_10ms (unsigned int n) {
+	unsigned int i;
+	OPTION = 0x07;		// 分频比1:256
+	T0IF = 0;			// 清除标志位
+
+	for (i=0; i<n; i++) {
+		TMR0 = CONST_T;		// 重新赋初值
+		while(!T0IF);		// 溢出
+		T0IF = 0;			// 清除标志位
+	}
+}
+~~~
+
+
+
+~~~c
+#include <pic.h>
+// __CONFIG(XT&WDTDIS&LVPDIS);
+
+
+#define CONST_T 0xD9;
+#define N_10 0x19;
+int n;					// 定义全局变量 n，用于标志TRM0中断发生次数
+void main() {
+	TRISC1 = 0;			// RC1输出
+	OPTION = 0x07;		// 分频比 1:256
+	T0IE = 1;			// TMR0中断使能
+	T0IF = 0;			// TMR0中断标志位清除
+	GIE = 1;			// 总中断使能
+
+	TMR0 = CONST_T;		// TMR0寄存器赋初值
+	RC1 = 0;			// RC1输出低电平
+
+	n = N_10;			// n = 0x19
+	while(1);			// 循环
+}
+
+void interrupt PIC_Int(void) {
+
+	if(n == 0) {
+		RC1 = !RC1;		// RC1取反
+		n = N_10;		// n重新赋值
+	}
+	else {
+		n = n - 1;		// 中断次数+1，n-1
+	}
+
+	TMR0 = CONST_T;		// TMR0寄存器赋初值
+	T0IF = 0;			// TMR0中断标志位清除
+}
+
+~~~
+
+
+
+~~~c
+#include<pic.h>
+void main(){
+	ADCON1=(ADCON1&0xf0)|0x07;				// ADCON1低四位为0111，RA为数字IO
+	TRISD=0x00;								// D端口设置为输出
+	TRISA=TRISA&(~(0x01<<1));				// RA1设置为输出
+	TRISA4=1;								// RA4设置为输入，计数按键
+	RA1=1;									// RA1设为高电平，选中按键，通过跳线把按键信号传给RA4
+	OPTION_REG=0B00101000;					// 工作于计数器模式，分频取2
+	T0IF=0;									// 清除标志位
+	TMR0=0x00;								//TMR0初始值为0
+				    
+	while(1){
+		PORTD=TMR0;							// 数码管显示计数了几次
+	}
+}
+~~~
+
+
+
+~~~c
+#include <pic.h>
+
+void PWMIni(void);
+
+void main(void) {
+    TRISD = 0x00;       // D端口全输出
+    PORTD = 0xff;       // D端口全输出高电平
+    PWMIni();			// 初始化配置
+    while(1);			// 进入循环
+}
+
+void PWMIni(void) {
+    TRISC2 = 0;                     // RC2=0,设为输出模式
+    T2CON = (T2CON & 0xfc) | 0x03;  // T2CON[2:0]=1x, TRM2分频比设为16:1
+    TMR2=0;                         // 清空TMR2[7:0]
+    PR2=187;                        // [4M]=62, [12M]=187
+    CCP1CON = 0b00111111;           // CCP1CON[3:0]=11xx, CCP1-PWM模式
+                                    // CCP1CON[5:4]=11, 脉宽寄存器低二位设为11
+    CCPR1L = 46;                    // [4M]=15, [12M]=46
+
+    TMR2ON = 1;                     // TMR2 开始计时
+}
+~~~
+
+
+
+
+
+~~~c
+#include <pic.h>
+
+void delay(int t);
+void init_USART();
+
+void main(void) {
+    init_USART();
+    while(1) {
+        TXREG = 0x32;
+        while(!TRMT);
+        delay(10);
+    }
+}
+
+void init_USART() {
+    TRISC6 = 0;
+    TRISC7 = 1;
+    TXSTA = 0b00100100;
+    RCSTA = 0b10010000;
+    SPBRG = 25;
+    INTCON = 0x00;
+}
+
+void delay(int t) {
+    int i, j;
+    for(i=t; i>0; i--) {
+        for(j=0; j<100; j++);
+    }
+}
+~~~
+
+
+
+~~~c
+#include <pic.h>
+
+void delay(int t);
+void init_USART();
+
+void main(void) {
+    init_USART();
+	while(1) {
+		if(RCIF) {
+			PORTD = RCREG-0x30;
+			RCIF=0;
+		}
+	}
+}
+
+void init_USART() {
+    TRISC6 = 0;
+    TRISC7 = 1;
+	TRISD = 0;
+	TRISA1 = 0;
+	RA1 = 1;
+    TXSTA = 0b00100100;
+    RCSTA = 0b10010000;
+    SPBRG = 25;
+    INTCON = 0x00;
+
+}
+
+void delay(int t) {
+    int i, j;
+    for(i=t; i>0; i--) {
+        for(j=0; j<100; j++);
+    }
+}
+~~~
+
+
+
+~~~c
+#include <pic.h>
+
+void delay(int t);
+void init();
+unsigned int RH, RL;
+unsigned int temp;
+
+void main(void) {
+    init();
+
+    while(1) {
+        ADGO=1;
+		while(!ADIF);
+		RH=ADRESH;
+		RL=ADRESL;
+
+		temp = RH*256 + RL;  // 【10 bit】 0~1024
+
+		// Y***
+		TXREG=(temp/1000) + 0x30;
+		while(!TRMT);
+		delay(5);
+
+		// *Y**
+		TXREG=(temp/100)%10 + 0x30;
+		while(!TRMT);
+		delay(5);
+
+		// **Y*
+		TXREG=(temp/10)%10 + 0x30;
+		while(!TRMT);
+		delay(5);
+
+		//  ***Y
+		TXREG=temp%10 + 0x30;
+		while(!TRMT);
+		delay(5);
+
+		// \n
+		TXREG=0x0A;
+		while(!TRMT);
+		delay(5);
+
+		delay(400);
+    }
+}
+
+void init() {
+	// IO_configure
+    TRISC6 = 0;
+    TRISC7 = 1;
+
+	// USART_configure
+    TXSTA = 0b00100100;
+    RCSTA = 0b10010000;
+    SPBRG = 25;
+    INTCON = 0x00;
+
+	// AD_configure
+	TRISA0=1;        //RA0 as AD input
+	ADCON1=0x8E;     
+	ADCON0=0x41;
+	ADIF=0;
+}
+
+
+void delay(int t) {
+    int i, j;
+    for(i=t; i>0; i--) {
+        for(j=0; j<100; j++);
+    }
+}
+
+
 ~~~
 
