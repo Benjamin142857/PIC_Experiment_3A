@@ -12,11 +12,11 @@ dir_inc=
 dir_lib=
 dir_lkr=
 [CAT_FILTERS]
-filter_src=*.as;*.c
+filter_src=*.c;*.as;*.asm;*.usb
 filter_inc=*.h;
-filter_obj=*.obj
-filter_lib=*.lib
-filter_lkr=
+filter_obj=*.obj;*.p1;*.hex
+filter_lib=*.lib;*.lpp
+filter_lkr=*.unknown
 [CAT_SUBFOLDERS]
 subfolder_src=
 subfolder_inc=
@@ -32,12 +32,11 @@ file_000=no
 [FILE_INFO]
 file_000=think.c
 [SUITE_INFO]
-suite_guid={93566987-1A5D-48B8-8EFC-4B3A423573F9}
+suite_guid={507D93FD-16F1-4270-980F-0C7C0207E6D3}
 suite_state=
 [TOOL_SETTINGS]
-TS{3427F101-D8C5-4DDF-B308-9878161865F2}=-Zg9 -O -ASMLIST
-TS{BA0A828D-BB4D-41C2-A3C1-33597E9DC62A}=
-TS{AEA473BD-AA1F-42D2-A715-587544675159}=-M"$(TARGETBASE).map" -O"$(TARGETBASE).cof" -O"$(TARGETBASE).hex"
+TS{3FF1D5F2-E530-4850-9F70-F61D55BD1AC9}= C9=1
+TS{3FF1D5F2-E530-4850-9F70-F61D55BD1AC9}_alt=yes
 [INSTRUMENTED_TRACE]
 enable=0
 transport=0
